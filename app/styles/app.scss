@@ -1,0 +1,141 @@
+$susy: (
+gutters: (0),
+);
+
+@import 'bower_components/susy/sass/susy';
+@import 'scalefonts';
+@import 'navigationbar';
+@import url(http://fonts.googleapis.com/css?family=Laila:400,700);
+@import url(http://fonts.googleapis.com/css?family=Hind:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,900);
+@import 'login';
+@import 'rantform';
+@import 'rants';
+
+*,:after,:before{box-sizing:border-box}
+
+a {
+  text-decoration: none;
+  font: inherit;
+}
+
+body {
+  @include span(10 of 10);
+  aside {
+    padding-left: 15px;
+    @include span(2 of 8);
+  }
+  main {
+    @include span(6 of 8 last);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+main > section.list-users {
+  @include span(3.85 of 4);
+  margin-left: 20px;
+}
+
+main > section > div.user-card {
+  @include span(.9 of 4);
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  padding: 15px 15px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body {
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.72222;
+  color: #34495e;
+  background-color: #fff;
+}
+
+
+
+.app-inner-header {
+  float: left;
+  background: #3498DB;
+  padding: 7px 15px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.app-inner-header {
+  width: 100%;
+}
+
+.app-inner-header .button {
+  float: right;
+  color: #16a085;
+}
+
+.button-invert {
+  background: #fff;
+  color: #1ABC9C;
+  border-color: #fff;
+  &:hover{
+    color: white;
+    background: #1ABC9C;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 3px;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.rant-search-field {
+  padding: 5px 0;
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  color: #34495E;
+  text-indent: 0;
+  background: 0 0;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+  width: 100%;
+}
+
+.rant-search-field input, .rant-search-field textarea {
+  display: block;
+  width: 100%;
+}
+
+.rant-search {
+  padding: 5px;
+  color: #3498DB;
+  background: 0 0/16px 16px #3498DB;
+}
+
+.rant-search-field::-webkit-input-placeholder {
+   color: white;
+}
+
+
+.login-form.signup {
+  box-shadow: none;
+}
+
+.scroll {
+  overflow-y: scroll;
+}

@@ -1,3 +1,52 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<header class="app-header" role="navigation">
+  <div class="content">
+    <div class="app-header-brand">
+      {{#link-to 'rants'}}Rantly{{/link-to}}
+    </div>
+    <nav>
+        {{#link-to 'rants'}}Rants{{/link-to}}
+        {{#link-to 'users'}}Users{{/link-to}}
+        {{#link-to 'rants'}}Sign up{{/link-to}}
+    </nav>
+  </div>
+</header>
 
-{{outlet}}
+<body>
+  <aside>
+    <div class="rant-search">
+      {{input value=params class="rant-search-field" placeholder="Search" type="search" name="search"}}
+
+    </div>
+
+
+    {{#if session.isAuthenticated}}
+      <form class='login-form'>
+        <div class='form-group'>
+          You are logged in.
+          </div>
+          <div class="form-group">
+            User name.
+          </div>
+          <div class="form-group">
+            <button {{ action 'invalidateSession' }}>Logout</button>
+          </div>
+      </form>
+    {{else}}
+      {{login-component}}
+    {{/if}}
+
+  </aside>
+
+
+  <main id="scroll">
+    <header class="app-inner-header">
+      <button {{action 'newRant' this}} class="button button-invert new-rant">New Rant</button>
+    </header>
+
+    {{outlet}}
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
