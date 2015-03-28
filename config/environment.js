@@ -19,7 +19,7 @@ module.exports = function(environment) {
      'script-src': "'self'",
      'font-src': "'self' http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com/",
      'connect-src': "'self' localhost:3000",
-     'img-src': "'self' http://www.gravatar.com/",
+     'img-src': "'self' *",
      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com/",
      'media-src': "'self'"
  },

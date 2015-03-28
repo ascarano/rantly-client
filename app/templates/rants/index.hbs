@@ -1,2 +1,3 @@
-{{outlet}}
-<h2>Rants</h2>
+{{#each rant in controller itemController='rant'}}
+    {{single-rant deleteRant="deleteRant" editRant="editRant" cancelRant="cancelRant" updateRant="updateRant" title=rant.title body=rant.body rant=rant}}
+{{/each}}
