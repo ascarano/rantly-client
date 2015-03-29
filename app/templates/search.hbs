@@ -1,3 +1,9 @@
+{{#if model}}
 {{#each rant in model}}
 {{single-rant title=rant.title body=rant.body rant=rant}}
 {{/each}}
+{{else}}
+<p>
+  These are not the droids you're looking for!
+</p>
+{{/if}}
