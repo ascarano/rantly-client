@@ -7,7 +7,6 @@ export default Ember.ObjectController.extend({
 
       var title = this.get('rantTitle');
       var body = this.get('rantBody');
-      var user  = this.get('session.email');
       var userid = this.get('session.user_id');
       var self = this;
 
