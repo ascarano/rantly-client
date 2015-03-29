@@ -6,7 +6,7 @@
     <nav>
         {{#link-to 'rants'}}Rants{{/link-to}}
         {{#link-to 'users'}}Users{{/link-to}}
-        {{#link-to 'rants'}}Sign up{{/link-to}}
+        {{#link-to 'signup'}}Sign up{{/link-to}}
     </nav>
   </div>
 </header>
@@ -14,7 +14,7 @@
 <body>
   <aside>
     <div class="rant-search">
-      {{input value=params class="rant-search-field" placeholder="Search" type="search" name="search"}}
+      {{input value=search class="rant-search-field" placeholder="Search" type="search" name="search" action='doSearch'}}
 
     </div>
 
