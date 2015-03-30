@@ -1,68 +1,72 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
- var ENV = {
-   modulePrefix: 'client',
-   environment: environment,
-   baseURL: '/',
-   adapterURL: process.env.ADAPTER_URL,
-   locationType: 'auto',
-   EmberENV: {
-     FEATURES: {
-       // Here you can enable experimental features on an ember canary build
-       // e.g. 'with-controller': true
-     }
-   },
 
-   contentSecurityPolicy: {
-     'default-src': "'none'",
-     'script-src': "'self'",
-     'font-src': "'self' http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com/",
-     'connect-src': "'self' " + process.env.ADAPTER_URL,
-     'img-src': "'self' *",
-     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com/",
-     'media-src': "'self'"
- },
+  var ENV = {
+    modulePrefix: 'client',
+    environment: environment,
+    baseURL: '/',
+    locationType: 'auto',
+    adapterURL: process.env.ADAPTER_URL,
+    EmberENV: {
+      FEATURES: {
+        // Here you can enable experimental features on an ember canary build
+        // e.g. 'with-controller': true
+      }
+    },
 
-   APP: {
-     // Here you can pass flags/options to your application instance
-     // when it is created
-   }
- };
+    contentSecurityPolicy: {
+          'default-src': "'none'",
+          'script-src': "'self' 'unsafe-eval'",
+          'font-src': "'self' fonts.gstatic.com",
+          'connect-src': "'self' " + process.env.ADAPTER_URL,
+          'img-src': "'self' *",
+          'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+          'media-src': "'self'"
+    },
 
- ENV['simple-auth'] = {
-   authorizer: 'simple-auth-authorizer:devise',
-   routeAfterAuthentication: null
- };
+    APP: {
+      // Here you can pass flags/options to your application instance
+      // when it is created
+    }
+  };
 
- ENV['simple-auth-devise'] = {
-   crossOriginWhitelist: ['*'],
-   identificationAttributeName: 'email'
- };
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:devise',
+    identificationAttributeName: 'email',
+    authenticationRoute: '/',
+    routeAfterAuthentication: null
+  };
 
- if (environment === 'development') {
-   // ENV.APP.LOG_RESOLVER = true;
-   // ENV.APP.LOG_ACTIVE_GENERATION = true;
-   // ENV.APP.LOG_TRANSITIONS = true;
-   // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-   // ENV.APP.LOG_VIEW_LOOKUPS = true;
- }
+  ENV['simple-auth-devise'] = {
+    crossOriginWhitelist: ['*'],
+    identificationAttributeName: 'email',
+    authenticationRoute: '/'
+  };
 
- if (environment === 'test') {
-   // Testem prefers this...
-   ENV.baseURL = '/';
-   ENV.locationType = 'none';
+  if (environment === 'development') {
+    // ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
+    // ENV.APP.LOG_TRANSITIONS = true;
+    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+  }
 
-   // keep test console output quieter
-   ENV.APP.LOG_ACTIVE_GENERATION = false;
-   ENV.APP.LOG_VIEW_LOOKUPS = false;
+  if (environment === 'test') {
+    // Testem prefers this...
+    ENV.baseURL = '/';
+    ENV.locationType = 'none';
 
-   ENV.APP.rootElement = '#ember-testing';
- }
+    // keep test console output quieter
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
 
- if (environment === 'production') {
+    ENV.APP.rootElement = '#ember-testing';
+  }
 
- }
+  if (environment === 'production') {
 
- return ENV;
+  }
+
+  return ENV;
 };
