@@ -19,7 +19,7 @@ module.exports = function(environment) {
           'default-src': "'none'",
           'script-src': "'self' 'unsafe-eval'",
           'font-src': "'self' fonts.gstatic.com",
-          'connect-src': "'self' http://localhost:3000 https://damp-island-8746.herokuapp.com/", 
+          'connect-src': "'self' https://localhost:3000 https://damp-island-8746.herokuapp.com/",
           'img-src': "'self' *",
           'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
           'media-src': "'self'"
